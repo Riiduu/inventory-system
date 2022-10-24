@@ -1,0 +1,6 @@
+An inventory system which manages:
+    products, 
+    sales, 
+    purchases, 
+    and returns (sales and purchases) 
+with some forecasting based on previous sales and purchases

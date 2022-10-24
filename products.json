@@ -1,0 +1,17 @@
+[
+    {
+        "product": "iPohone 6s",
+        "price": 430,
+        "quantity": 136
+    },
+    {
+        "product": "Apple MacBook A1",
+        "price": 1999,
+        "quantity": 132
+    },
+    {
+        "product": "Smart TV",
+        "price": 2499,
+        "quantity": 322
+    }
+]
