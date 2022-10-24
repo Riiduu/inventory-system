@@ -7,18 +7,18 @@ class Inventory:
     def return_products(self):
         pass
 
-    def buy_item(self):
+    def buy_item():
         print("Enter the product name")
         prodName = input("> ")
-        with open(database, 'r') as f:
-            temp = json.load(f)
+        with open(database, 'r') as d:
+            temp = json.load(d)
         for entry in temp:
             if prodName == entry["product"]:
-                entry["quantity"] -= 1
+                entry["quantity"]
                 temp.append(entry)
-                with open(database, 'w') as f:
-                    temp = json.load(f)
-                temp.dump(temp, f, indent=4)
+                with open(database, 'w') as d:
+                    temp = json.load(d)
+                temp.dump(temp, d, indent=4)
 
     def list_inventory(self):
         while True:
