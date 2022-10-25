@@ -12,9 +12,7 @@ def Choices():
 def view_data():
     with open(filename, 'r') as f:
         temp = json.load(f)
-        print(temp[1])
-        for entry in temp:
-           pass
+        print(temp[2])
 
 while True:
     Choices()

@@ -8,29 +8,47 @@ class Inventory:
         pass
 
     def buy_item():
-        print("Enter the product name")
-        prodName = input("> ")
-        with open(database, 'r') as d:
-            temp = json.load(d)
-        for entry in temp:
-            if prodName == entry["product"]:
-                entry["quantity"]
-                temp.append(entry)
-                with open(database, 'w') as d:
-                    temp = json.load(d)
-                temp.dump(temp, d, indent=4)
+        while True:
+            print("Enter the product index")
+            index = int(input("> "))
+            with open(database, 'r') as d:
+                temp = json.load(d)
+
+            try:
+                correctIndex = index - 1
+                prod = temp[correctIndex]
+                print(prod["product"] + ": $" + str(prod["price"]))
+                print()
+                print("Is this the right product?")
+                inp = input("(y/n): ").lower()
+
+                if inp == "y":
+                    prod['quantity'] -= 1
+                    print(prod)
+                    temp == prod['quantity']
+                    with open(database, 'w') as d:
+                        json.dump(temp, d, indent=4)
+                        Inventory.list_inventory()
+
+            except:
+                print("Incorrect index")
+                print("Please try again")           
+
 
     def list_inventory(self):
         while True:
             with open(database, 'r') as f: #opens the json file
                 temp = json.load(f) # sets the json to a temp variable
+                i = 1
                 for entry in temp: # loops through the entries
                     product = entry["product"]
                     price = entry["price"]
                     quantity = entry["quantity"]
 
-                    print(f"{product}: ${price}, {quantity} pcs") # prints the entries
-
+                    print(f"{i}. {product}: ${price}, {quantity} pcs") # prints the entries
+                    i += 1
+            
+            print()
             print("1. Buy")
             print("2. Leave")
             action = int(input("> "))
@@ -95,7 +113,5 @@ def main():
             break
         else:
             print("Wrong input \ntry again")
-
-    
 
 main()

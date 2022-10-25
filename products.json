@@ -1,8 +1,8 @@
 [
     {
-        "product": "iPohone 6s",
+        "product": "iPhone 6s",
         "price": 430,
-        "quantity": 136
+        "quantity": 134
     },
     {
         "product": "Apple MacBook A1",
@@ -13,5 +13,10 @@
         "product": "Smart TV",
         "price": 2499,
         "quantity": 322
+    },
+    {
+        "product": "tavmamm",
+        "price": 69,
+        "quantity": 1
     }
 ]
